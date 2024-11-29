@@ -1,4 +1,4 @@
-# Install script for directory: /home/dahao/code/new_start/gesture/main
+# Install script for directory: /home/dahao/code/new_start/deployment/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
