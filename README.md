@@ -20,3 +20,14 @@ A complete deep learning gesture recognition project, from model training to ESP
 - Support multiple quantization strategies to adapt to resource-constrained devices
 - Complete ESP32-S3 implementation based on ESP-IDF framework
 - Provide pre-trained models in multiple formats
+
+
+## Community Resources
+- [**Complete ESP-DL Workflow Guide**](https://github.com/alibukharai/Blogs/tree/main/ESP-DL) 
+- Comprehensive tutorial covering setup, model conversion, quantization and deployment
+- Environment setup
+- Model preparation
+- Quantization process
+- ESP32 deployment
+- Performance optimization
+

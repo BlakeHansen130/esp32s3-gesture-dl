@@ -17,3 +17,12 @@
 - 基于ESP-IDF框架的完整ESP32-S3实现
 - 提供多种格式的预训练模型
 
+## 社区资源
+
+- [**完整的 ESP-DL 工作流程指南**](https://github.com/alibukharai/Blogs/tree/main/ESP-DL) 
+- 全面的教程，涵盖设置、模型转换、量化和部署
+- 环境设置
+- 模型准备
+- 量化过程
+- ESP32 部署
+- 性能优化
