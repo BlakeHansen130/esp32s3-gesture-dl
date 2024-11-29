@@ -1,2 +1,22 @@
-# gesture-recognition-model
-手势识别深度学习模型，支持模型量化与多平台部署。包含数据处理、训练、优化及推理代码。  A deep learning model for gesture recognition, supporting model quantization and multi-platform deployment. Includes data processing, training, optimization and inference code.
+# Gesture recognition system based on ESP32-S3 [中文](./README_cn.md)
+
+A complete deep learning gesture recognition project, from model training to ESP32-S3 embedded deployment.
+
+## Project structure
+
+- training: Model training related files, including training code and various generated model files
+
+- quantization: Model quantization optimization, implementing multiple quantization strategies to adapt to embedded devices
+
+- deployment: ESP32-S3 deployment code, complete implementation based on ESP-IDF framework
+
+- dataset: Contains gesture image datasets for training and testing
+
+- environment: Environmental requirements (different steps require different environments).
+
+## Main features
+
+- Deep learning model for real-time gesture recognition
+- Support multiple quantization strategies to adapt to resource-constrained devices
+- Complete ESP32-S3 implementation based on ESP-IDF framework
+- Provide pre-trained models in multiple formats
