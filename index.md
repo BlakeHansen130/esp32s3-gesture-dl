@@ -1,5 +1,5 @@
 ---
-title: "Deep Learning Based Gesture Recognition on ESP32-S3: From Training to Deployment"
+title: "Deep Learning for Gesture Recognition on ESP32-S3 from Training to Deployment"
 date: 2024-11-30
 showAuthor: false
 authors:
@@ -11,7 +11,7 @@ tags:
   - ESP-DL
   - Model Quantization
 ---
-Integrating deep learning capabilities into embedded systems has become a crucial aspect of modern IoT applications. Although powerful deep learning models can achieve high recognition accuracy, deploying these models on resource-constrained devices poses considerable challenges. This article presents a gesture recognition system based on the ESP32-S3, detailing the entire workflow from model training to deployment on embedded hardware. The complete project implementation and code are available at [gesture-recognition-model](https://github.com/BlakeHansen130/gesture-recognition-model). By utilizing ESP-DL(master branch) and incorporating efficient quantization strategies with ESP-PPQ, this study demonstrates the feasibility of achieving real-time gesture recognition on resource-limited devices while maintaining satisfactory accuracy. Additionally, insights and methodologies were inspired by the work described in [Espressif's blog on hand gesture recognition](https://developer.espressif.com/blog/hand-gesture-recognition-on-esp32-s3-with-esp-deep-learning/), which significantly influenced the approach taken in this article.
+Integrating deep learning capabilities into embedded systems has become a crucial aspect of modern IoT applications. Although powerful deep learning models can achieve high recognition accuracy, deploying these models on resource-constrained devices poses considerable challenges. This article presents a gesture recognition system based on the ESP32-S3, detailing the entire workflow from model training to deployment on embedded hardware. The complete project implementation and code are available at [gesture-recognition-model](https://github.com/BlakeHansen130/gesture-recognition-model). By utilizing ESP-DL(master branch) and incorporating efficient quantization strategies with ESP-PPQ, this study demonstrates the feasibility of achieving gesture recognition on resource-limited devices while maintaining satisfactory accuracy. Additionally, insights and methodologies were inspired by the work described in [Espressif's blog on hand gesture recognition](https://developer.espressif.com/blog/hand-gesture-recognition-on-esp32-s3-with-esp-deep-learning/), which significantly influenced the approach taken in this article.
 
 __*This article provides an overview of the complete development process for a gesture recognition system, encompassing dataset preparation, model training, and deployment.*__
 
@@ -25,12 +25,18 @@ The gesture recognition system is built upon the ESP32-S3 platform, leveraging i
 
 The development process requires two distinct Conda environments to handle different stages of the workflow. The primary training environment, designated as 'dl_env', manages dataset preprocessing, model training, and basic evaluation tasks. A separate quantization environment, 'esp-dl', is specifically configured for model quantization, accuracy assessment, and ESP-DL format conversion.
 
-For the deployment phase, ESP-IDF version 5.x is used, with specific testing conducted on v5.3.1. The implementation relies on the master branch of ESP-DL, which can be obtained through:
+For the deployment phase, ESP-IDF version 5.x is used, with specific testing conducted on v5.3.1. The implementation relies on the master branch of ESP-DL and ESP-PPQ for enhanced quantization capabilities. The specific versions used in this implementation can be obtained through:
 
 ```bash
 git clone -b v5.3.1 https://github.com/espressif/esp-idf.git
 git clone https://github.com/espressif/esp-dl.git
+git clone https://github.com/espressif/esp-ppq.git
 ```
+
+For reproducibility purposes, the exact commits used in this implementation are:
+- ESP-IDF: c8fc5f643b7a7b0d3b182d3df610844e3dc9bd74
+- ESP-DL: ac58ec9c0398e665c9b1d66d3760ac47d1676018
+- ESP-PPQ: edfd2d685f88e5b17f773981647172d0ea628ae3
 
 It is important to note that using released versions of ESP-DL (such as idfv4.4 or v1.1) may not yield the same quantization performance as the latest master branch. The system configuration requires careful memory management, particularly in handling the ESP32-S3's PSRAM. This is configured through the ESP-IDF menuconfig system with specific attention to flash size and SPIRAM settings.
 
@@ -349,7 +355,7 @@ The baseline model (prior to quantization) established high accuracy across eigh
 
 After quantization, the mixed-precision approach balanced resource use and recognition accuracy effectively. INT8 quantization minimized model size, while selectively using 16-bit precision in key layers maintained feature discrimination. Equalization-aware quantization helped keep consistent performance across all gestures.
 
-On the ESP32-S3, the optimized model achieved real-time inference with moderate power consumption and efficient memory use, leveraging both internal RAM and PSRAM effectively. These results confirm that the optimization strategies are suitable for deploying advanced gesture recognition on resource-constrained platforms, enabling practical real-time applications.
+On the ESP32-S3, the optimized model achieved moderate power consumption and efficient memory use, leveraging both internal RAM and PSRAM effectively. These results confirm that the optimization strategies are suitable for deploying advanced gesture recognition on resource-constrained platforms.
 
 ## References
 
