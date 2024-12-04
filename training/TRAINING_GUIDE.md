@@ -1,5 +1,19 @@
 # Hand Gesture Recognition Model Training [中文](./TRAINING_GUIDE_cn.md)
 
+## Updates
+
+[2024-12-01] CHANGELOG:
+
+feat(data): Optimize `train-Copy1.ipynb` data enhancement strategy
+
+- Expand the image rotation enhancement parameter range
+
+- Add horizontal/vertical flip enhancement
+
+perf(training): Introduce differentiated evaluation indicators
+- Set independent accuracy thresholds for training set/test set
+- Implement dynamic overfitting monitoring mechanism
+
 This folder contains the model training code and exported models for a deep learning-based hand gesture recognition system. The project aims to classify 8 different hand gestures using a lightweight neural network architecture.
 
 ## Project Structure

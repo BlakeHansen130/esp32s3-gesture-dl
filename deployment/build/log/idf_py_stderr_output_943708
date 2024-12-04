@@ -1,0 +1,3 @@
+CONFIG_MODEL_FILE_PATH is defined
+CONFIG_MODEL_FILE_PATH: model/gesture_model_mixed.espdl
+PROJECT_DIR: /home/dahao/code/new_start/deployment

@@ -1,5 +1,21 @@
 # Hand Gesture Recognition Dataset [中文](./GESTURE_RECOGNITION_DATASET_cn.md)
 
+## Updates
+
+[2024-12-01] CHANGELOG:
+
+feat(preprocessing): Added skin color detection and image preprocessing module
+- Implemented intelligent skin color segmentation based on YCrCb color space
+- Introduced morphological optimization (OPEN/CLOSE) to improve edge detection quality
+- Integrated adaptive contrast enhancement (α=1.5) and dynamic binarization
+- Added robust exception handling mechanism
+- Supported command line calls and batch processing functions
+- Standardized output path management, automatically created target folders
+
+build(env): Configure dependencies
+- Introduced OpenCV core modules
+- Integrated NumPy numerical computing support
+
 [![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-blue.svg)](https://www.kaggle.com/datasets/gti-upm/leapgestrecog)
 
 A preprocessed dataset for hand gesture recognition based on the [LeapGestRecog dataset](https://www.kaggle.com/datasets/gti-upm/leapgestrecog) from Kaggle.

@@ -16,6 +16,6 @@ dependencies:
     version: 5.3.1
 direct_dependencies:
 - espressif/esp-dl
-manifest_hash: faa9f782ca7f421f009ad1aaee14e18e4f43667a2ca1ed29c2844b0a9c72a9c6
+manifest_hash: 993a0fc3fdbe33c43a01dfeb87920e802330c3868055a3ed9ab4efa8780c1086
 target: esp32s3
 version: 2.0.0

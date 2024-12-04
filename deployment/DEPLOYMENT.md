@@ -1,5 +1,21 @@
 # ESP32-S3 Model Deployment Guide [中文](./DEPLOYMENT_cn.md)
 
+## Updates
+
+[2024-12-01] CHANGELOG:
+
+feat(preprocessing): Added skin color detection and image preprocessing module
+- Implemented intelligent skin color segmentation based on YCrCb color space
+- Introduced morphological optimization (OPEN/CLOSE) to improve edge detection quality
+- Integrated adaptive contrast enhancement (α=1.5) and dynamic binarization
+- Added robust exception handling mechanism
+- Supported command line calls and batch processing functions
+- Standardized output path management, automatically created target folders
+
+build(env): Configure dependencies
+- Introduced OpenCV core modules
+- Integrated NumPy numerical computing support
+
 ## Project Overview
 
 This deployment project demonstrates running a quantized gesture recognition model on ESP32-S3. The implementation focuses on efficient memory usage, fast inference, and reliable model execution.

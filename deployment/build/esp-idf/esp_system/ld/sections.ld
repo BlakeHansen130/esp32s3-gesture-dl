@@ -456,10 +456,9 @@ SECTIONS
      * ldgen places all bss-related data to mapping[dram0_bss]
      * (See components/esp_system/app.lf).
      */
-    *(.bss .bss.*)
+    *(EXCLUDE_FILE(*liblwip.a *libnet80211.a *libpp.a *libwpa_supplicant.a) .bss EXCLUDE_FILE(*liblwip.a *libnet80211.a *libpp.a *libwpa_supplicant.a) .bss.*)
     *(.dynbss .dynsbss .gnu.linkonce.b .gnu.linkonce.b.* .gnu.linkonce.sb .gnu.linkonce.sb.* .gnu.linkonce.sb2 .gnu.linkonce.sb2.* .sbss .sbss.* .sbss2 .sbss2.* .scommon .share.mem)
-    *(.ext_ram.bss .ext_ram.bss.*)
-    *(COMMON)
+    *(EXCLUDE_FILE(*liblwip.a *libnet80211.a *libpp.a *libwpa_supplicant.a) COMMON)
     
  . = ALIGN(8); 
  _bss_end = ABSOLUTE(.);
@@ -658,6 +657,15 @@ SECTIONS
   .ext_ram.bss (NOLOAD) :
   {
     _ext_ram_bss_start = ABSOLUTE(.);
+    *(.ext_ram.bss .ext_ram.bss.*)
+    *liblwip.a:(.bss .bss.*)
+    *liblwip.a:(COMMON)
+    *libnet80211.a:(.bss .bss.*)
+    *libnet80211.a:(COMMON)
+    *libpp.a:(.bss .bss.*)
+    *libpp.a:(COMMON)
+    *libwpa_supplicant.a:(.bss .bss.*)
+    *libwpa_supplicant.a:(COMMON)
     
  . = ALIGN(4); 
  _ext_ram_bss_end = ABSOLUTE(.);

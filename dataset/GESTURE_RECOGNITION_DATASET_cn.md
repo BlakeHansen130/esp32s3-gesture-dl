@@ -1,5 +1,21 @@
 # 手势识别数据集
 
+## 更新内容
+
+[2024-12-01] CHANGELOG:
+
+feat(preprocessing): 新增肤色检测与图像预处理模块
+- 实现基于YCrCb色彩空间的智能肤色分割
+- 引入形态学优化(OPEN/CLOSE)提升边缘检测质量
+- 集成自适应对比度增强(α=1.5)与动态二值化
+- 新增健壮的异常处理机制
+- 支持命令行调用及批处理功能
+- 标准化输出路径管理，自动创建目标文件夹
+
+build(env): 配置依赖
+- 引入OpenCV核心模块
+- 集成NumPy数值计算支持
+
 [![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-blue.svg)](https://www.kaggle.com/datasets/gti-upm/leapgestrecog)
 
 基于 Kaggle 的 [LeapGestRecog 数据集](https://www.kaggle.com/datasets/gti-upm/leapgestrecog) 进行手势识别的预处理数据集。
