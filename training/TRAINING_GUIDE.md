@@ -20,14 +20,24 @@ This folder contains the model training code and exported models for a deep lear
 
 ```
 .
-├── model.ipynb                    # Model architecture definition
-├── train.ipynb                    # Training script and procedures
-├── data_label_verification.ipynb  # Dataset validation and analysis
-├── best_model.pth                 # Best checkpoint during training
-├── gesture_model.pth             # Final PyTorch model
-├── gesture_model.onnx            # ONNX format model
-├── gesture_model.tflite          # TensorFlow Lite model
-└── tf_gesture_model/             # TensorFlow SavedModel directory
+├── best_model.pth
+├── data_label_verification.ipynb
+├── gesture_model.onnx
+├── gesture_model.pth
+├── gesture_model.tflite
+├── model.ipynb
+├── Onnx Inference.py
+├── tf_gesture_model
+│   ├── assets
+│   ├── fingerprint.pb
+│   ├── saved_model.pb
+│   └── variables
+│       ├── variables.data-00000-of-00001
+│       └── variables.index
+├── train-Copy1.ipynb
+├── TRAINING_GUIDE_cn.md
+├── TRAINING_GUIDE.md
+└── train.ipynb
 ```
 
 ## Model Architecture

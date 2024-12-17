@@ -18,14 +18,24 @@ perf(training): 引入差异化评估指标
 
 ```
 .
-═── model.ipynb # 模型架构定义
-═── train.ipynb # 训练脚本和程序
-═── data_label_verification.ipynb # 数据集验证和分析
-═── best_model.pth # 训练期间的最佳检查点
-═──gesture_model.pth # 最终 PyTorch 模型
-═──gesture_model.onnx # ONNX 格式模型
-═──gesture_model.tflite # TensorFlow Lite 模型
-└── tf_gesture_model/ # TensorFlow SavedModel 目录
+├── best_model.pth
+├── data_label_verification.ipynb
+├── gesture_model.onnx
+├── gesture_model.pth
+├── gesture_model.tflite
+├── model.ipynb
+├── Onnx Inference.py
+├── tf_gesture_model
+│   ├── assets
+│   ├── fingerprint.pb
+│   ├── saved_model.pb
+│   └── variables
+│       ├── variables.data-00000-of-00001
+│       └── variables.index
+├── train-Copy1.ipynb
+├── TRAINING_GUIDE_cn.md
+├── TRAINING_GUIDE.md
+└── train.ipynb
 ```
 
 ## 模型架构
